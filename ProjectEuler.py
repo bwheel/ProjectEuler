@@ -10,21 +10,21 @@ def problem1():
 
 def problem2():
 
-    even1 = 0
-    even2 = even1
-    even1 += 5 if True else 0
+    def func(current, last, evenSum):
 
-    def func(current, last):
-
-        #even1 +=  current if current % 2 == 0 else 0
+        even = current + evenSum if current % 2 == 0 else evenSum
 
         if current <= 4000000:
-            return func(last+current, current)
+            return func(last+current, current, even)
         else:
-            return current
+            return even
         pass
-    print("x")
-    print(func(2,1))
+
+    print(func(2,1,0))
+    pass
+
+def problem3():
+
     pass
 
 def main(args):
