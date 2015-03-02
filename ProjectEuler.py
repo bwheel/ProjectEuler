@@ -24,11 +24,26 @@ def problem2():
     pass
 
 def problem3():
+    # first find the prime numbers
+    def isprime(n):
+        for x in range(2, n-1):
+            print(x)
+            if x % n == 0:
+                print("it is divisaasdfble")
+                return True
+
+        else:
+            print("It is not")
+            return False
 
     pass
+    print("TAcos")
+    for a in range(5,10):
+        if isprime(a) == True:
+            print("Yes")
 
 def main(args):
-    problem2()
+    problem3()
 
     pass
 
