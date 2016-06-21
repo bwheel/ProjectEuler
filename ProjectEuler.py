@@ -1,6 +1,7 @@
 __author__ = 'Byron'
 
 import sys
+
 def problem1():
 
     nums = [x for x in range(1, 1000) if x % 3 == 0 or x % 5 == 0]
@@ -24,26 +25,56 @@ def problem2():
     pass
 
 def problem3():
-    # first find the prime numbers
-    def isprime(n):
-        for x in range(2, n-1):
-            print(x)
-            if x % n == 0:
-                print("it is divisaasdfble")
-                return True
+    #find the largest prime factors of a given number.
 
+    # Step 1. get the number from the user.
+    test_num = int(input("Enter test number:"))
+
+    # Step 2. figure out all the multiples of that number.
+    # create a function to test if number is divisible
+    def find_divisible(num):
+        for n in range(2, num-1):
+            # check if number is divisible.
+            if num % n == 0:
+                return n
         else:
-            print("It is not")
-            return False
+            #if we didn't find any number that was divisible and it's a prime number
+            return num
+        pass
+    
+    # create some variables to test the divisibility
+    divisibles = []
+    test_divisible = test_num
+    result_divisible = find_divisible(test_divisible)
+    divisibles.append(result_divisible)
+
+    # test the rest of the values for divisibility
+    while result_divisible != test_divisible:
+        test_divisible = int(test_divisible / result_divisible)
+        result_divisible = find_divisible(test_divisible)
+        divisibles.append(result_divisible)
+    
+    #step 3. find the max prime factor and print it.
+    max = 0
+    for d in divisibles:
+        if d > max:
+            max = d
+    print("max is {}".format(max))
 
     pass
-    print("TAcos")
-    for a in range(5,10):
-        if isprime(a) == True:
-            print("Yes")
+
+
+
+def problem4():
+    # find the largest number from the product of two 3-digit numbers that is also a palindrome  
+    
+    pass
 
 def main(args):
+    
+    
     problem3()
+    input("Press enter to exit.")
 
     pass
 
