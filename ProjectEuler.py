@@ -66,14 +66,34 @@ def problem3():
 
 
 def problem4():
+    
+    # The problem...
     # find the largest number from the product of two 3-digit numbers that is also a palindrome  
     
+    palindromes = [] 
+
+    # Step1. loop through all the combinations of 3 digit numbers
+    for num1 in range(100,999):
+        for num2 in range(num1+1,999):
+
+            # step 2. calculate the product
+            test_num = num1 * num2
+
+            # step 3. check for palindrom-i-ness
+            if str(test_num) == str(test_num)[::-1]:
+                # save off that value.
+                palindromes.append(test_num)
+
+    #print the result.
+    print("Max number is {}".format(max(palindromes)))
+            
+
     pass
 
 def main(args):
     
     
-    problem3()
+    problem4()
     input("Press enter to exit.")
 
     pass
